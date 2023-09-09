@@ -1,0 +1,111 @@
+header, footer {
+    background-color: #363753;
+    color: white;
+    padding: 10px;
+    display: grid;
+    align-items: center;
+}
+header {
+    grid-area: header;
+}
+footer {
+    grid-area: footer;
+}
+nav {
+    background-color: #5CD2C6;
+    grid-area: nav;
+    display: grid;
+    align-content: center;
+}
+nav ul {
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: start;
+    padding-left: 5px;
+}
+nav ul li {
+    padding: 5px 10px;
+    margin: 5px;
+}
+aside {
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow:  0 0 5px gray;
+    display: none;
+    grid-area: sidebar;
+}
+main {
+    grid-area: main;
+    display: grid;
+    place-items: center;
+}
+body {
+    background-color: #DFE3EE;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 50px 40px auto 50px;
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "main main"
+    "footer footer";
+}
+nav ul li a, aside ul li a {
+    text-decoration: none;
+    color: black;
+}
+aside ul li {
+    margin: 5px;
+}
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: rotateAndChangeColor 5s linear infinite;
+}
+
+@media screen and (min-width: 600px){
+    aside {
+        display: initial;
+        grid-area: sidebar;
+    }
+    .square {
+        width: 200px;
+        height: 200px;
+    }
+    body {
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "main sidebar"
+        "footer footer";
+    }
+    nav ul {
+        padding-left: 40px;
+    }
+}
+
+
+@keyframes rotateAndChangeColor {
+    0% {
+        transform: rotate(0deg);
+        background-color: red;
+    }
+    33% {
+        transform: rotate(120deg);
+        background-color: orange;
+    }
+    66% {
+        transform: rotate(240deg);
+        background-color: green;
+    }
+    100% {
+        transform: rotate(360deg);
+        background-color: red;
+    }
+}

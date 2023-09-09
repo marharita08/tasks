@@ -1,0 +1,97 @@
+header, footer {
+    background-color: #363753;
+    color: white;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+nav {
+    background-color: #5CD2C6;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-left: 5px;
+}
+nav ul li {
+    padding: 5px 10px;
+    margin: 5px;
+}
+.root {
+    display: flex;
+    height: calc(100% - 140px);
+}
+aside {
+    margin: 10px;
+    width: calc(25% - 20px);
+    background-color: #DFE3EE;
+    border-radius: 5px;
+    box-shadow:  0 0 5px gray;
+    display: none;
+}
+body {
+    background-color: #DFE3EE;
+    margin: 0;
+}
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%
+}
+nav ul li a, aside ul li a {
+    text-decoration: none;
+    color: black;
+}
+aside ul li {
+    margin: 5px;
+}
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation: rotateAndChangeColor 5s linear infinite;
+}
+
+@media screen and (min-width: 600px){
+    aside {
+        display: initial;
+    }
+    main {
+        width: 75%;
+    }
+    .square {
+        width: 200px;
+        height: 200px;
+    }
+    nav ul {
+        padding-left: 40px;
+    }
+}
+
+
+@keyframes rotateAndChangeColor {
+    0% {
+        transform: rotate(0deg);
+        background-color: red;
+    }
+    33% {
+        transform: rotate(120deg);
+        background-color: orange;
+    }
+    66% {
+        transform: rotate(240deg);
+        background-color: green;
+    }
+    100% {
+        transform: rotate(360deg);
+        background-color: red;
+    }
+}
